@@ -1,0 +1,1 @@
+web: sh setup_db.sh && heroku-php-apache2 public/

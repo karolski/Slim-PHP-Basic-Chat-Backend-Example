@@ -1,0 +1,57 @@
+{
+    "name": "slim-chat-base",
+    "description": "A simple example of chat backent api",
+    "keywords": [
+        "trial",
+        "job",
+        "psr7"
+    ],
+    "homepage": "https://team4hire.nl",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Karol Skalski",
+            "email": "karol@team4hire.nl",
+            "homepage": "https://team4hire.nl"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "ext-json": "*",
+        "ext-pdo_sqlite": "*",
+        "doctrine/orm": "^2.7",
+        "monolog/monolog": "^2.1",
+        "php-di/php-di": "^6.2",
+        "respect/validation": "^2.1",
+        "slim/psr7": "^1.1",
+        "slim/slim": "^4.5",
+        "tuupola/slim-jwt-auth": "^3.5",
+        "vlucas/phpdotenv": "^5.2"
+    },
+    "require-dev": {
+        "jangregor/phpstan-prophecy": "^0.8.0",
+        "phpstan/extension-installer": "^1.0.4",
+        "phpstan/phpstan": "^0.12.37",
+        "phpunit/phpunit": "^8.5",
+        "squizlabs/php_codesniffer": "^3.5",
+        "ext-http": "*"
+    },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "start": "php -S localhost:8080 -t public",
+        "test": "phpunit --coverage-text",
+        "test:coverage": "phpunit --coverage-html coverage",
+        "analyse": "phpstan analyse src -l 8",
+        "sniff": "phpcs --standard=PSR1 src tests -p",
+        "sniff:fix": "phpcbf --standard=PSR1 src tests"
+    }
+}
